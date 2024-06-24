@@ -6,6 +6,7 @@ import postRoutes from "./routes/post.route.js";
 import cookieParser from "cookie-parser";
 import connectMongoDB from "./db/connectMongoDB.js";
 import { v2 as cloudinary } from "cloudinary";
+import notificationRoutes from "./routes/notification.route.js";
 
 
 
@@ -20,7 +21,6 @@ cloudinary.config({
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// console.log(process.env.MONGO_URI);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/posts", postRoutes);
-
+app.use("/api/notifications", notificationRoutes);
 
 
 
