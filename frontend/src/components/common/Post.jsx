@@ -104,7 +104,7 @@ const Post = ({ post }) => {
 			queryClient.invalidateQueries({ queryKey: ["posts"] });
 		},
 		onError: (error) => {
-			toast.error(error.message);
+			toast.error(error.message);``
 		},
 	});
 
